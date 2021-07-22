@@ -5,7 +5,21 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            string: "Hello fucking world from Vasya"
+            string: "Hello fucking world from Vasya",
+            monsters: [
+                {
+                    name: 'Dracula',
+                    id: '001'
+                },
+                {
+                    name: 'Dracula',
+                    id: '001'
+                },
+                {
+                    name: 'Dracula',
+                    id: '001'
+                }
+            ]
         }
     }
     render () {
