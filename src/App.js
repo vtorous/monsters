@@ -6,28 +6,24 @@ class App extends Component {
         super(props);
         this.state = {
             string: "Hello fucking world from Vasya",
-            monsters: [
-                {
-                    name: 'Dracula',
-                    id: '001'
-                },
-                {
-                    name: 'Dracula',
-                    id: '001'
-                },
-                {
-                    name: 'Dracula',
-                    id: '001'
-                }
-            ]
+            monsters: []
         }
     }
+
+    componentDidMount() {
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(users => this.setState({monsters : users}))
+    }
+
     render () {
         return (
-            <>
-                <h1>{this.state.string}</h1>
-                <button onClick={() => this.setState({string: 'World is not fucking!'})}>Change text</button>
-            </>
+            <div className="App">
+                {
+                    this.state.monsters.map(
+                        monster => (<h1 key={monster.id}>{monster.name}</h1>
+                ))}
+            </div>
         )
     }
 }
