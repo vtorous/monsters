@@ -21,8 +21,9 @@ class App extends Component {
             <div className="App">
                 {
                     this.state.monsters.map(
-                        monster => (<h1 key={monster.id}>{monster.name}</h1>
-                ))}
+                        monster => (<><h1 key={monster.id}>{monster.name}</h1></> )
+                    )
+                }
             </div>
         )
     }
